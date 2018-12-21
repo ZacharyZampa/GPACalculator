@@ -128,7 +128,7 @@ public class GPA_Calculator {
 
 
     public static char menu() {
-        System.out.println("\t\n\n===============================");
+        System.out.println("\n\n\t===============================");
         System.out.println("\tGPA Calculator Application"); 
         System.out.println("\tDeveloped by: Zachary Zampa "); 
         System.out.println("\tDate: 12/20/2018");
@@ -147,8 +147,7 @@ public class GPA_Calculator {
     } // end menu method
 
     
-    
-    // read course info from keyboard -- TODO read course info from file; ensure calculated GPA is not factored in as well
+    // read course info from user input
     public static ClassAndGrade readCourseInfofromKeyboard() {
         String className = null;
         double classGPA = -1.0;
@@ -183,12 +182,6 @@ public class GPA_Calculator {
 
     } // end readCourseInfofromKeyboard method
 
-
-
-//    // read course info from existing .txt file -- TODO ensure calculated GPA is not factored in as well
-//    public static void readCourseInfofromFile() {
-//        
-//    } // end readCourseInfofromFile method
 
     public static Scanner keyboard = new Scanner(System.in); // keyboard input
 

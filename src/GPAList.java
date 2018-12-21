@@ -52,15 +52,14 @@ public class GPAList {
 
         double GPA = getGPA();
 
-        fileOut.println("Cumulative GPA"); // file header
-        fileOut.println("Course; GPA; Credits");
+        fileOut.printf("Cumulative GPA: %.2f", GPA);
+        fileOut.println("\nCourse; GPA; Credits"); // file header
 
         for (ClassAndGrade course : classes) // begin printing Courses
         {
             fileOut.println(course);
         }
 
-        fileOut.printf("\nCumulative GPA: %.2f", GPA);
 
         fileOut.close();
 
@@ -71,7 +70,11 @@ public class GPAList {
         String className = null;
         double classGPA = -1.0;
         int classCredits = -1;
-                
+        
+        // skip header line
+        fileIn.nextLine();
+        fileIn.nextLine();
+        
         while(fileIn.hasNext()) 
         {
             String[] split = fileIn.nextLine().split(";");
@@ -86,8 +89,8 @@ public class GPAList {
         }
         
         fileIn.close();
+       
         
     }
     
 }
-
