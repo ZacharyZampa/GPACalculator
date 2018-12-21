@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GPAList {
     private ArrayList<ClassAndGrade> classes;
@@ -64,5 +65,29 @@ public class GPAList {
         fileOut.close();
 
     }
+    
+    public void pullFromFile(String fileName) throws FileNotFoundException {
+        Scanner fileIn = new Scanner(new File(fileName));
+        String className = null;
+        double classGPA = -1.0;
+        int classCredits = -1;
+                
+        while(fileIn.hasNext()) 
+        {
+            String[] split = fileIn.nextLine().split(";");
+            
+            className = split[0].trim();
+            classGPA = Double.parseDouble(split[1].trim());
+            classCredits = Integer.parseInt(split[2].trim());
+            
+            // add each course info to array list
+            ClassAndGrade createdClass = new ClassAndGrade(className, classGPA, classCredits);
+            classes.add(createdClass);
+        }
+        
+        fileIn.close();
+        
+    }
+    
 }
 

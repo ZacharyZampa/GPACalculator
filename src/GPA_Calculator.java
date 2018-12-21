@@ -44,8 +44,17 @@ public class GPA_Calculator {
                 fileName = keyboard.next() + ".txt";
                 keyboard.nextLine();
 
-                courseList.saveToFile(fileName); // TODO save calculated GPA as well
+                courseList.saveToFile(fileName);
                 System.out.println("File saved as " + fileName);
+                break;
+                
+            case 'E':
+                System.out.print("What .txt file would you like to import: "); 
+                String fileImportName = null;
+                fileImportName = keyboard.next() + ".txt";
+                keyboard.nextLine();
+                courseList.pullFromFile(fileImportName);
+                System.out.println("File imported to program");
                 break;
 
             case 'X': 
@@ -119,7 +128,7 @@ public class GPA_Calculator {
 
 
     public static char menu() {
-        System.out.println("\t===============================");
+        System.out.println("\t\n\n===============================");
         System.out.println("\tGPA Calculator Application"); 
         System.out.println("\tDeveloped by: Zachary Zampa "); 
         System.out.println("\tDate: 12/20/2018");
@@ -128,6 +137,7 @@ public class GPA_Calculator {
         System.out.println("\tB. List Classes in the Calculation List");
         System.out.println("\tC. Caculate the Overall GPA");
         System.out.println("\tD. Save the Class List to a File");
+        System.out.println("\tE. Import Existing .txt File");
         System.out.println("\tX. Exit");
         System.out.println();
         System.out.print("Option:"); 
@@ -136,6 +146,8 @@ public class GPA_Calculator {
 
     } // end menu method
 
+    
+    
     // read course info from keyboard -- TODO read course info from file; ensure calculated GPA is not factored in as well
     public static ClassAndGrade readCourseInfofromKeyboard() {
         String className = null;
@@ -170,6 +182,13 @@ public class GPA_Calculator {
         return createdClass; // return info of added class
 
     } // end readCourseInfofromKeyboard method
+
+
+
+//    // read course info from existing .txt file -- TODO ensure calculated GPA is not factored in as well
+//    public static void readCourseInfofromFile() {
+//        
+//    } // end readCourseInfofromFile method
 
     public static Scanner keyboard = new Scanner(System.in); // keyboard input
 
