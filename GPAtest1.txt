@@ -1,0 +1,8 @@
+Course; GPA; Credits
+Cumulative GPA: 3.41
+CSE 174; 4.0; 3
+CSE 262; 3.7; 3
+ECE 287; 4.0; 4
+ISA 225; 3.0; 3
+RA; 4.0; 1
+MTH 251; 2.3; 4
