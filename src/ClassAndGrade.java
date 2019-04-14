@@ -15,7 +15,10 @@ public class ClassAndGrade {
 	this.setClassCredits(classCredits);
     } // end ClassAndGrade constructor
     
-    
+    /**
+     * Get the name of the course
+     * @return string name of course
+     */
     public String getClassName() {
 	return className;
     }

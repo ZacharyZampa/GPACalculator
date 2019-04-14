@@ -89,8 +89,22 @@ public class GPAList {
         }
         
         fileIn.close();
-       
-        
+    }
+    
+    public void clearList() {
+    	classes.clear();
+    	System.out.println("Courses cleared from list");
+    }
+    
+    public void removeLast() {
+    	String removed = "";
+    	try {
+    		removed = classes.remove(classes.size() - 1).getClassName();
+    		System.out.println(removed + " was removed from the list");
+    	} catch(Exception ex) {
+    		System.out.println("The list is already empty");
+    	}
+    	
     }
     
 }
